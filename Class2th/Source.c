@@ -79,6 +79,138 @@ void main()
 
 #pragma endregion
 
+#pragma region if문
+	// 어떤 특정한 조건을 비교하여 조건이 맞다면 실행되는 명령문입니다.
+
+	/*int monsterHP = 0;
+
+	if (monsterHP <= 0)
+	{
+		printf("Monster Destroy\n");
+	}*/
+
+	// if문은 조건이 1일 때 실행되며, 0일 때 실행되지 않습니다.
+
+#pragma endregion
+
+#pragma region else if문
+	// if문의 조건이 틀릴 때 else if문의 조건이 맞다면 실행되는 명령문입니다.
+
+	/*int level = 98;
+
+	if (level == 99)
+	{
+		printf("승급 가능");
+	}
+	else if (level != 99)
+	{
+		printf("승급 불가능");
+	}*/
+	
+	// else if문의 경우 여러 개를 더 추가해서 사용할 수 있습니다.
+
+#pragma endregion
+
+#pragma region else문
+	// if문과 else if문의 조건이 다 틀리면 실행되는 명령문입니다.
+	
+	/*char grade = 'C';
+
+	if (grade == 'A')
+	{
+		printf("A 등급");
+	}
+	else if (grade == 'B')
+	{
+		printf("B 등급");
+	}
+	else
+	{
+		printf("예외 등급");
+	}*/
+
+	// if문에 연결된 모든 조건문의 조건이 맞을 때 가장
+	// 위에 있는 조건문만 실행됩니다.
+
+#pragma endregion
+
+#pragma region 조건 연산자(실습 문제 : 사분면)
+	// AND 연산자 : if(조건1 && 조건2)
+	// OR  연산자 : if(조건1 || 조건2)
+	// NOT 연산자 : if(!조건)
+	
+	/*int x = 6;
+	int y = 1;
+	
+	if (x > 0 && y > 0)
+	{
+		printf("제 1 사분면");
+	}
+	else if (x < 0 && y > 0)
+	{
+		printf("제 2 사분면");
+	}
+	else if (x < 0 && y < 0)
+	{
+		printf("제 3 사분면");
+	}
+	else if (x > 0 && y < 0)
+	{
+		printf("제 4 사분면");
+	}
+	else if (y == 0 && x != 0)
+	{
+		printf("x 절편");
+	}
+	else if (x == 0 && y != 0)
+	{
+		printf("y 절편");
+	}
+	else
+	{
+		printf("원점");
+	}*/
+
+#pragma endregion
+
+#pragma region switch문
+	// 어떤 결과에 따라 그 결과부터 실행되는 명령문입니다.
+	
+	// case    : 경우
+	// default : 예외
+
+	//int select = 1;
+
+	//// break문이란?
+	//// 특정한 지점에서 분기를 탈출하는 제어문입니다.
+	//
+	//switch (select)
+	//{
+	//case 0: printf("타이틀 화면\n");
+	//	break;
+	//case 1: printf("마을 이동\n");
+	//	break;
+	//case 2: printf("던전 이동\n");
+	//	break;
+	//default: printf("잘못된 값이 들어왔습니다.\n");
+	//	
+	//// switch문은 해당 조건이 완료되었을 때, break문이 없으면
+	//// 나머지 밑에 있는 case문까지 계속 실행시키다가 종료합니다.
+	//}
+
+	// switch문의 경우 조건에 해당하는 값에 따라 조건의 위치로 이동합니다.
+
+	/*float time = 5.75f;
+
+	switch (time)
+	{
+		case 5.75f: printf("time : %d", time);
+	}*/
+
+	// switch문에는 조건식으로 실수형 변수와 실수형 상수를 사용할 수 없습니다.(부동 소수점 때문)
+
+#pragma endregion
+
 
 #pragma endregion
 

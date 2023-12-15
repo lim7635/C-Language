@@ -41,4 +41,33 @@ void main()
 
 #pragma endregion
 
+#pragma region 시프트 연산자
+	// 비트 값을 주어진 숫자만큼 부호 방향만큼 이동시키는 연산자입니다.
+
+	//char data = 10; // 0000 1010
+	//
+	//printf("data 변수를 왼쪽 2번 시프트 연산한 결과 : %d\n", data << 4); // 0010 1000 : 40(10진수)
+	//printf("data 변수의 값 : %d\n", data); // 0010 1000 : 40(10진수)
+
+	//printf("data 변수를 오른쪽 3번 시프트 연산한 결과 : %d\n", data >>= 3); // 0000 0001 : 1(10진수)
+	//printf("data 변수의 값 : %d\n", data); // 0000 0001 : 1(10진수)
+
+#pragma endregion
+	
+#pragma region 부호 없는 자료형
+	// 부호 비트를 제거하여 저장 가능한 양수의 범위를
+	// 2배 늘리는 자료형입니다.
+
+	//unsigned int alphabet = -1; // 약 42억
+
+	//// %u : unsigned 자료형을 출력하는 서식 지정자
+	//printf("alphabet 변수의 값 : %d\n", alphabet);
+	//// [1111 1111] [1111 1111] [1111 1111] [1111 1111] : 맨 왼쪽에 있는 1은 음수 처리
+
+
+	//printf("alphabet 변수의 값 : %u\n", alphabet);
+	//// [1111 1111] [1111 1111] [1111 1111] [1111 1111] : 맨 왼쪽에 있는 1은 음수 처리 X
+
+#pragma endregion
+
 }

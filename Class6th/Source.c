@@ -45,7 +45,7 @@ void main()
 #pragma region sizeof 연산자
 	// 피연산자의 크기를 바이트 단위로 반환하는 연산자입니다.
 
-	int* pointer = NULL;
+	/*int* pointer = NULL;
 
 	printf("char 자료형의 크기 : %d\n",    sizeof(char));
 	printf("short 자료형의 크기 : %d\n",   sizeof(short));
@@ -53,8 +53,69 @@ void main()
 	printf("long 자료형의 크기 : %d\n",    sizeof(long));
 	printf("float 자료형의 크기 : %d\n",   sizeof(float));
 	printf("double 자료형의 크기 : %d\n",  sizeof(double));
-	printf("pointer 자료형의 크기 : %d\n", sizeof(pointer));
+	printf("pointer 자료형의 크기 : %d\n", sizeof(pointer));*/
 
 #pragma endregion
+
+#pragma region 상수 지시 포인터
+	// 포인터 변수를 상수로 선언하여
+	// 포인터 변수가 가리키고 있는 주소에 존재하는 값을
+	// 변경할 수 없도록 설정할 수 있습니다.
+
+	//const int* ptr;
+
+	//int a = 10;
+
+	//int b = 20;
+
+	//ptr = &a;
+	//printf("ptr의 값 : %p\n", ptr);
+
+	//a = 45;
+	//// *ptr = 100;
+	//
+	//ptr = &b;
+	//printf("ptr의 값 : %p\n", ptr);
+
+	// 상수로 선언한 포인터는 해당 변수의 값을 변경할 수 없지만
+	// 다른 변수의 주소는 가리킬 수 있습니다.
+
+#pragma endregion
+
+#pragma region 포인터 상수
+
+	//int x = 100;
+	//int y = 200;
+
+	//int* const cptr = &x;
+
+	//*cptr = 999;
+
+	//printf("x의 값 : %d", x);
+
+	//// cptr = &y; (ERROR)
+
+#pragma endregion
+
+#pragma region 실습 문제 : 약수 구하기
+	// % : 나머지 연산자
+	
+	// printf("%d", 5 % 4);
+
+	/*int number = 0;
+
+	printf("숫자 입력 : ");
+	scanf_s("%d", &number);
+
+	for (int i = 1; i <= number; i++)
+	{
+		if(number % i == 0)
+		{
+			printf("%d ", i);
+		}
+	}*/
+	
+#pragma endregion
+
 
 }

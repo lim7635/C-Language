@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6d1bdb7f-05c5-4847-b390-952ca38cff64": {
+      "ProjectGuid": "6d1bdb7f-05c5-4847-b390-952ca38cff64",
+      "DisplayName": "Class1th",
+      "ColorIndex": 0
+    },
+    "2593dd6a-2e10-4c8d-841e-a7be5d244a2d": {
+      "ProjectGuid": "2593dd6a-2e10-4c8d-841e-a7be5d244a2d",
+      "DisplayName": "Class2th",
+      "ColorIndex": 1
+    },
+    "527f77c8-e93c-41c9-8263-8c82aa7544b2": {
+      "ProjectGuid": "527f77c8-e93c-41c9-8263-8c82aa7544b2",
+      "DisplayName": "Class3th",
+      "ColorIndex": 2
+    },
+    "2aaaf263-bf37-41c9-ba90-b109a0ecb8ad": {
+      "ProjectGuid": "2aaaf263-bf37-41c9-ba90-b109a0ecb8ad",
+      "DisplayName": "Class4th",
+      "ColorIndex": 3
+    },
+    "7683df52-2eab-4555-82aa-a84269cea23f": {
+      "ProjectGuid": "7683df52-2eab-4555-82aa-a84269cea23f",
+      "DisplayName": "Class5th",
+      "ColorIndex": 4
+    },
+    "b3e664f8-e23c-4403-ac97-742c6acea4c1": {
+      "ProjectGuid": "b3e664f8-e23c-4403-ac97-742c6acea4c1",
+      "DisplayName": "Class6th",
+      "ColorIndex": 5
+    },
+    "dce313e6-357c-4596-b060-1754a9df194b": {
+      "ProjectGuid": "dce313e6-357c-4596-b060-1754a9df194b",
+      "DisplayName": "Program",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}

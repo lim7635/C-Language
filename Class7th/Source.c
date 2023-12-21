@@ -95,15 +95,12 @@ void main()
 	// ÃÖ´ñ°ª : 35
 	// ÃÖ¼Ú°ª : 2
 
-	int number[] = { 10,22,35,2,5 };
+	/*int number[] = { 10,22,35,2,5 };
 
-	int max = 0;
-	int min = 0;
+	int max = number[0];
+	int min = number[0];
 
 	int size = sizeof(number) / sizeof(int);
-
-	max = number[0];
-	min = number[0];
 
 	for (int i = 0; i < size; i++)
 	{
@@ -119,7 +116,7 @@ void main()
 	}
 
 	printf("ÃÖ´ñ°ª : %d\n", max);
-	printf("ÃÖ¼Ú°ª : %d\n", min);
+	printf("ÃÖ¼Ú°ª : %d\n", min);*/
 
 #pragma endregion
 

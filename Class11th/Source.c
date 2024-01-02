@@ -109,9 +109,6 @@ int main()
 	//	currentNode = currentNode->next;
 	//}
 
-
-
-
 #pragma endregion
 
 

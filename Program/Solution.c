@@ -1,67 +1,95 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void Instantiate()
+enum Unit
 {
-	printf("Instantiate\n");
-}
+	// 열거형은 값을 따로 지정하지 않으며
+	// 가장 위에 있는 값은 0이라는 값으로 설정됩니다.
+	SKELETON, // 0
+	SLIME = 15, // 15
+	GOBLIN // 16
 
-int Factorial(int x) // 재귀 함수
+	// 열거형에서 중간에 있는 값을 변경하게 되면
+	// 변경된 값부터 그 다음에 있는 모든 값이 +1이 됩니다.
+};
+
+void CreateUnit(enum Unit unit)
 {
-	if (x == 0 || x == 1)
+	switch (unit)
 	{
-		return 1;
-	}
-	else
-	{
-		return x * Factorial(x - 1);
+	case SKELETON : printf("Create Skeleton\n");
+		break;
+	case SLIME : printf("Create Slime\n");
+		break;
+	case GOBLIN : printf("Create Goblin\n");
+		break;
+	default :
+		break;
 	}
 }
 
 int main()
 {
-#pragma region 함수 포인터
-	// 함수의 주소값을 저장하고 가리킬 수 있는 포인터 변수입니다.
+#pragma region 포인터 배열
+	
+	//const char* string[3];
+	//
+	//// 8 byte 8 byte 8 byte
+	//// [    ] [    ] [    ]
 
-	// 반환값과 매개 변수가 없는 함수 포인터를 선언합니다.
-	// void (*ptr) ();
-	//int (*iptr) (int);
+	//// "Blue" "Black" "Green"
 
-	//// ptr 변수에 Instantiate 함수의 주소를 저장합니다.
-	//// ptr = Instantiate;
+	//string[0] = "Blue";
+	//string[1] = "Black";
+	//string[2] = "Green";
 
-	//// 함수 포인터를 호출합니다.
-	//// ptr();
-
-	//iptr = Factorial;
-	//int x = 0;
-	//scanf_s("%d", &x);
-
-	//int Factorial = 1; // for문을 이용한 함수
-	//for (int i = 1; i <= x; i++)
+	//for (int i = 0; i < 3; i++)
 	//{
-	//	Factorial = Factorial * i;
+	//	printf("string[%d] : %p\n", i, string[i]);
+	//	printf("string[%d] : %c\n", i, *string[i]);
+	//	printf("string[%d] : %s\n\n", i, string[i]);
 	//}
-	//return Factorial;
-	//printf("%d의 Factorial : %d\n", x, iptr(x));
-
-	// 함수 포인터는 함수의 반환형과 매개 변수의 타입이 일치해야 하며
-	// 함수 포인터를 사용하여 동적으로 메모리를 할당할 수 없습니다.
 
 #pragma endregion
 
-#pragma region 이중 포인터
-	/*int data = 100;
+#pragma region 열거형
 
-	int* sptr = &data;
-	int** dptr = &sptr;
-
-	printf("*sptr의 값 : %d\n", *sptr);
-	printf("*dptr의 값 : %p\n", *dptr);
-
-	**dptr = 999;
-	printf("data의 값 : %d\n", data);*/
+	/*CreateUnit(SKELETON);
+	CreateUnit(SLIME);
+	CreateUnit(GOBLIN);*/
 
 #pragma endregion
+
+#pragma region 허상 포인터
+	// 이미 해제된 메모리 영역을 가리키는 포인터입니다.
+
+	//int* ptr = malloc(sizeof(4));
+
+	//*ptr = 999; // 값 넣기
+
+	//printf("*ptr의 값 : %d\n", *ptr); // 999 출력
+	//
+	//free(ptr); // 초기화
+
+	//printf("*ptr의 값 : %d\n", *ptr); // 쓰레기값 출력
+
+	//ptr = NULL;
+
+	//if (ptr == NULL)
+	//{
+	//	ptr = malloc(sizeof(4));
+	//}
+
+	//*ptr = 235;
+	//// (주의) 초기화 후 값을 숫자를 넣으면 에러가 발생하지 않지만 해제된 HEAP에 값이 들어가게 되어 위험하다.
+	//// NULL을 작성하여 문제를 예방한다.
+
+	//printf("*ptr의 값 : %d\n", *ptr);
+
+	//free(ptr);
+
+#pragma endregion
+
 
 	return 0;
 }

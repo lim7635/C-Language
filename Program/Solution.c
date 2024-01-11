@@ -1,95 +1,85 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <time.h>
 
-enum Unit
+void UpdateHPBar(int Life)
 {
-	// 열거형은 값을 따로 지정하지 않으며
-	// 가장 위에 있는 값은 0이라는 값으로 설정됩니다.
-	SKELETON, // 0
-	SLIME = 15, // 15
-	GOBLIN // 16
-
-	// 열거형에서 중간에 있는 값을 변경하게 되면
-	// 변경된 값부터 그 다음에 있는 모든 값이 +1이 됩니다.
-};
-
-void CreateUnit(enum Unit unit)
-{
-	switch (unit)
+	for (int i = 0; i < Life; i++)
 	{
-	case SKELETON : printf("Create Skeleton\n");
-		break;
-	case SLIME : printf("Create Slime\n");
-		break;
-	case GOBLIN : printf("Create Goblin\n");
-		break;
-	default :
-		break;
+		printf("♥");
 	}
+}
+
+void UpdateUI()
+{
+	printf("\n 컴퓨터가 가지고 있는 값 : ");
 }
 
 int main()
 {
-#pragma region 포인터 배열
-	
-	//const char* string[3];
-	//
-	//// 8 byte 8 byte 8 byte
-	//// [    ] [    ] [    ]
+#pragma region rand 함수
+	// 0 ~ 32767 사이의 난수 값을 생성하고 반환하는 함수입니다.
 
-	//// "Blue" "Black" "Green"
+	// seed 값으로 현재 시간을 넣으면
+	// 초당 seed 값이 계속해서 변화되기 때문에
+	// 실행할 때마다 랜덤한 난수의 값을 얻을 수 있습니다.
+	//srand(time(NULL)); // 초당 랜덤으로 설정
 
-	//string[0] = "Blue";
-	//string[1] = "Black";
-	//string[2] = "Green";
-
-	//for (int i = 0; i < 3; i++)
+	//for (int i = 0; i < 5; i++)
 	//{
-	//	printf("string[%d] : %p\n", i, string[i]);
-	//	printf("string[%d] : %c\n", i, *string[i]);
-	//	printf("string[%d] : %s\n\n", i, string[i]);
+	//	int seed = rand() % 10;
+	//	{
+	//		printf("seed의 값 : %d\n", seed);
+	//	}
 	//}
 
 #pragma endregion
 
-#pragma region 열거형
+#pragma region UP DOWN GAME
 
-	/*CreateUnit(SKELETON);
-	CreateUnit(SLIME);
-	CreateUnit(GOBLIN);*/
+	int Life = 5;
+
+	srand(time(NULL));
+
+	// 1. 컴퓨터 변수에 0 ~ 50 사이의 난수 값을 넣어줍니다.
+	int Computer = rand() % 51;
+
+	// 2. 컴퓨터가 가지고 있는 값을 맞추기 위한 변수 선언
+	int Answer = 0;
+
+	while (1)
+	{
+		UpdateHPBar(Life); // HPBar를 출력하는 함수
+		UpdateUI(); // 입력을 받을 수 있는 텍스트를 출력하는 함수
+		
+		// 컴퓨터가 가지고 있는 값을 입력합니다.
+		scanf_s("%d", &Answer);
+
+		system("cls");
+
+		if (Answer == Computer)
+		{
+			printf("\n V i c t o r y");
+			break;
+		}
+		else if (Answer < Computer)
+		{
+			Life--;
+			printf("\n컴퓨터가 가지고 있는 값보다 작습니다.\n");
+		}
+		else if (Answer > Computer)
+		{
+			Life--;
+			printf("\n컴퓨터가 가지고 있는 값보다 큽니다.\n");
+		}
+		
+		if (Life <= 0)
+		{
+			printf("\nDefeat");
+			break;
+		}
+	}
 
 #pragma endregion
-
-#pragma region 허상 포인터
-	// 이미 해제된 메모리 영역을 가리키는 포인터입니다.
-
-	//int* ptr = malloc(sizeof(4));
-
-	//*ptr = 999; // 값 넣기
-
-	//printf("*ptr의 값 : %d\n", *ptr); // 999 출력
-	//
-	//free(ptr); // 초기화
-
-	//printf("*ptr의 값 : %d\n", *ptr); // 쓰레기값 출력
-
-	//ptr = NULL;
-
-	//if (ptr == NULL)
-	//{
-	//	ptr = malloc(sizeof(4));
-	//}
-
-	//*ptr = 235;
-	//// (주의) 초기화 후 값을 숫자를 넣으면 에러가 발생하지 않지만 해제된 HEAP에 값이 들어가게 되어 위험하다.
-	//// NULL을 작성하여 문제를 예방한다.
-
-	//printf("*ptr의 값 : %d\n", *ptr);
-
-	//free(ptr);
-
-#pragma endregion
-
 
 	return 0;
 }

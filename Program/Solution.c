@@ -25,7 +25,7 @@ void CreateMaze()
 	strcpy(maze[10], "0000111102");
 }
 
-void Render(int j)
+void Render()
 {
 	for (int i = 0; i < 11; i++)
 	{
@@ -58,7 +58,7 @@ int main()
 	printf("student.nameÀÇ °ª : %s\n", student.name);*/
 
 	CreateMaze();
-	Render(0);
+	Render();
 
 	return 0;
 }

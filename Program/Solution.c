@@ -64,16 +64,16 @@ void Keyboard(char maze[WIDTH][HEIGHT], Player* player)
 
 		switch (key)
 		{
-		case UP: if (y - 1 >= 0) { y--; }
+		case UP: if ((player->y) - 1 >= 0) { (player->y)--; }
 			break;
 
-		case LEFT: if (x - 2 >= 0) { x -= 2; }
+		case LEFT: if ((player->x) - 2 >= 0) { player->x -= 2; }
 			break;
 
-		case RIGHT: x += 2;
+		case RIGHT: player->x += 2;
 			break;
 
-		case DOWN: y++;
+		case DOWN: (player->y)++;
 			break;
 
 		default:
@@ -143,7 +143,7 @@ int main()
 
 		GotoXY(player.x, player.y);
 		printf("%s", player.shape);
-		Keyboard();
+		Keyboard(maze, &player);
 
 		Sleep(100); // 0.1초 딜레이(1000 당 1초)
 		system("cls");

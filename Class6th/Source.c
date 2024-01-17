@@ -72,7 +72,7 @@ void main()
 	//printf("ptr의 값 : %p\n", ptr);
 
 	//a = 45;
-	//// *ptr = 100;
+	// *ptr = 100; (ERROR)
 	//
 	//ptr = &b;
 	//printf("ptr의 값 : %p\n", ptr);

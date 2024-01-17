@@ -11,10 +11,10 @@
 
 void GotoXY(int x, int y)
 {
-	// x, y ÁÂÇ¥ ¼³Á¤
+	// x, y ì¢Œí‘œ ì„¤ì •
 	COORD position = { x, y };
 
-	// Ä¿¼­ ÀÌµ¿ ÇÔ¼ö
+	// ì»¤ì„œ ì´ë™ í•¨ìˆ˜
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
 }
 
@@ -31,9 +31,9 @@ typedef struct Player
 
 void CreateMaze()
 {
-	// 0 : ºó °ø°£ ("  ")
-	// 1 : º® (¢È)
-	// 2 : Å»Ãâ±¸ (¡İ)
+	// 0 : ë¹ˆ ê³µê°„ ("  ")
+	// 1 : ë²½ (â–¥)
+	// 2 : íƒˆì¶œêµ¬ (â—)
 
 	strcpy(maze[0],  "0000000011");
 	strcpy(maze[1],  "1111101111");
@@ -48,13 +48,13 @@ void CreateMaze()
 	strcpy(maze[10], "1000100002");
 }
 
-void Keyboard(char map[WIDTH][HEIGHT], Player* player)
+void Keyboard(char maze[WIDTH][HEIGHT], Player* player)
 {
 	char key = 0;
 
-	if (_kbhit()) // Å°º¸µå ÀÔ·Â È®ÀÎ ÇÔ¼ö(true / false)
+	if (_kbhit()) // í‚¤ë³´ë“œ ì…ë ¥ í™•ì¸ í•¨ìˆ˜(true / false)
 	{
-		key = _getch(); // key ÀÔ·ÂÀ» ¹Ş¾ÆÁÖ´Â ÇÔ¼ö
+		key = _getch(); // key ì…ë ¥ì„ ë°›ì•„ì£¼ëŠ” í•¨ìˆ˜
 		system("cls");
 
 		if (key == -32)
@@ -64,7 +64,7 @@ void Keyboard(char map[WIDTH][HEIGHT], Player* player)
 
 		switch (key)
 		{
-		case UP: if (*player.y - 1 >= 0) { y--; }
+		case UP: if (y - 1 >= 0) { y--; }
 			break;
 
 		case LEFT: if (x - 2 >= 0) { x -= 2; }
@@ -95,11 +95,11 @@ void Render()
 			}
 			else if (maze[i][j] == '1')
 			{
-				printf("¢È");
+				printf("â–¥");
 			}
 			else if (maze[i][j] == '2')
 			{
-				printf("¡İ");
+				printf("â—");
 			}
 		}
 		printf("\n");
@@ -117,35 +117,35 @@ int main()
 
 	student.name;*/
 
-	// Ã¹ ¹øÂ° ¸Å°³º¯¼ö
-	// º¹»ç¹ŞÀ» ¹®ÀÚ ¹è¿­À» ³Ö¾îÁİ´Ï´Ù.
+	// ì²« ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜
+	// ë³µì‚¬ë°›ì„ ë¬¸ì ë°°ì—´ì„ ë„£ì–´ì¤ë‹ˆë‹¤.
 
-	// µÎ ¹øÂ° ¸Å°³º¯¼ö
-	// º¹»ç½ÃÅ³ ¹®ÀÚ¿­À» ³Ö¾îÁİ´Ï´Ù.
+	// ë‘ ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜
+	// ë³µì‚¬ì‹œí‚¬ ë¬¸ìì—´ì„ ë„£ì–´ì¤ë‹ˆë‹¤.
 	/*strcpy(student.name, "KIM");
 
-	printf("student.nameÀÇ °ª : %s\n", student.name);
+	printf("student.nameì˜ ê°’ : %s\n", student.name);
 
 	strcpy(student.name, "G");
 
-	printf("student.nameÀÇ °ª : %s\n", student.name);*/
+	printf("student.nameì˜ ê°’ : %s\n", student.name);*/
 
-	Player player = { 0, 0, "¡Ú" };
+	Player player = { 0, 0, "â˜…" };
 
-	// 1. ¸Ê µ¥ÀÌÅÍ¸¦ »ı¼ºÇÕ´Ï´Ù.
+	// 1. ë§µ ë°ì´í„°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 	CreateMaze();
 
 	while (1)
 	{
 
-		// 2. ¸Ê µ¥ÀÌÅÍ¿¡ ÀÖ´Â Á¤º¸¸¦ Åä´ë·Î Ãâ·ÂÇÕ´Ï´Ù.
+		// 2. ë§µ ë°ì´í„°ì— ìˆëŠ” ì •ë³´ë¥¼ í† ëŒ€ë¡œ ì¶œë ¥í•©ë‹ˆë‹¤.
 		Render();
 
 		GotoXY(player.x, player.y);
 		printf("%s", player.shape);
-		Keyboard(&player.x, &player.y);
+		Keyboard();
 
-		Sleep(100); // 0.1ÃÊ µô·¹ÀÌ(1000 ´ç 1ÃÊ)
+		Sleep(100); // 0.1ì´ˆ ë”œë ˆì´(1000 ë‹¹ 1ì´ˆ)
 		system("cls");
 
 
